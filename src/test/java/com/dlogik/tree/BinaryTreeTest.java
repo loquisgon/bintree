@@ -13,10 +13,10 @@ import static org.junit.Assert.assertFalse;
 /**
  * Unit test for simple App.
  */
-public class AppTest 
+public class BinaryTreeTest 
 {
 	
-	private BinaryTree binaryTree = new BinaryTree();
+	private BinaryTree<Integer> binaryTree = new BinaryTree<Integer>();
     
 	@Before
 	public void setup() {

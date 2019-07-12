@@ -1,5 +1,7 @@
 package com.dlogik.tree;
 
+import java.util.List;
+
 /**
  * Hello world!
  *
@@ -8,6 +10,18 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello Worldy!" );
+    	BinaryTree<Integer> tree = new BinaryTree<Integer>();
+    	tree.insert(7).insert(5).insert(15);
+    	
+    	List<Integer> list = tree.preOrder();
+    	
+    	System.out.println("The tree is:" + list);
+
+    	BinaryTree<Integer> tree2 = new BinaryTree<Integer>();
+    	tree2.insert(15).insert(5).insert(7);
+    	
+    	list = tree2.preOrder();
+    	System.out.println("The tree is:" + list);
+
     }
 }
