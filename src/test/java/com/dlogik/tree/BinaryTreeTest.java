@@ -16,11 +16,11 @@ import static org.junit.Assert.assertFalse;
 public class BinaryTreeTest 
 {
 	
-	private BinaryTree<Integer> binaryTree = new BinaryTree<Integer>();
+	private BinaryTree<Integer> binaryTree = new BinaryTree<>();
     
 	@Before
 	public void setup() {
-    	List<Integer> input = new ArrayList<Integer>();
+    	List<Integer> input = new ArrayList<>();
     	input.add(5);
     	input.add(15);
     	input.add(3);
@@ -34,7 +34,7 @@ public class BinaryTreeTest
     	input.add(14);
     		
     	
-        binaryTree = new BinaryTree<Integer>(7);
+        binaryTree = new BinaryTree<>(7);
         for (Integer value : input) {
         	binaryTree.insert(value);
         }
@@ -45,7 +45,7 @@ public class BinaryTreeTest
 	public void testPreOrder()
     {
 
-    	List<Integer> expected = new ArrayList<Integer>();
+    	List<Integer> expected = new ArrayList<>();
     	expected.add(7);
     	expected.add(5);
     	expected.add(3);
@@ -66,6 +66,8 @@ public class BinaryTreeTest
     
     @Test
     public void testFind() {
+    	BinaryTree<Integer> emptyTree = new BinaryTree<>();
+    	assertFalse("Empty tree! It does not have any data", emptyTree.find(6));
     	assertTrue("Value  not found in tree", binaryTree.find(14));
     	assertTrue("Value  not found in tree", binaryTree.find(1));
     	assertTrue("Value  not found in tree", binaryTree.find(13));
